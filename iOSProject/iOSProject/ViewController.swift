@@ -1,98 +1,75 @@
-//
-//  ViewController.swift
-//  iOSProject
-//
-//  Created by Ainur on 10/18/17.
-//  Copyright © 2017 Ainur. All rights reserved.
-//
+/*
+ * Copyright (c) 2015 Razeware LLC
+ *
+ * Permission is hereby granted, free of charge, to any person obtaining a copy
+ * of this software and associated documentation files (the "Software"), to deal
+ * in the Software without restriction, including without limitation the rights
+ * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+ * copies of the Software, and to permit persons to whom the Software is
+ * furnished to do so, subject to the following conditions:
+ *
+ * The above copyright notice and this permission notice shall be included in
+ * all copies or substantial portions of the Software.
+ *
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+ * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+ * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+ * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+ * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+ * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+ * THE SOFTWARE.
+ */
 
 import UIKit
-import JSQMessagesViewController
+import Firebase
+class ViewController: UIViewController {
+    
 
-
-struct User {
-    let id: String
-    let name: String
-}
-
-class ViewController: JSQMessagesViewController {
-    let user1 = User(id: "1", name: "Name1")
-    let user2 = User(id: "2", name: "Name2")
+    @IBOutlet weak var nameField: UITextField!
+    @IBOutlet weak var bottomLayoutGuideConstraint: NSLayoutConstraint!
+    // MARK: View Lifecycle
     
-    
-    var currentUser: User {
-        return user1
-    }
-    var messages = [JSQMessage]()
-}
-
-extension ViewController {
-    
-    override func didPressSend(_ button: UIButton!, withMessageText text: String!, senderId: String!, senderDisplayName: String!, date: Date!) {
-        let message = JSQMessage(senderId: senderId, displayName: senderDisplayName, text: text)
-        
-        messages.append(message!)
-        
-        finishSendingMessage()
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardWillShowNotification(_:)), name: NSNotification.Name.UIKeyboardWillShow, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardWillShowNotification(_:)), name: NSNotification.Name.UIKeyboardWillHide, object: nil)
     }
     
-    override func collectionView(_ collectionView: JSQMessagesCollectionView!, attributedTextForMessageBubbleTopLabelAt indexPath: IndexPath!) -> NSAttributedString! {
-        let message = messages[indexPath.row]
-        let messageUsername = message.senderDisplayName
-        
-        return NSAttributedString(string: messageUsername!)
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        NotificationCenter.default.removeObserver(self, name: NSNotification.Name.UIKeyboardWillShow, object: nil)
+        NotificationCenter.default.removeObserver(self, name: NSNotification.Name.UIKeyboardWillHide, object: nil)
     }
     
-    override func collectionView(_ collectionView: JSQMessagesCollectionView!, layout collectionViewLayout: JSQMessagesCollectionViewFlowLayout!, heightForMessageBubbleTopLabelAt indexPath: IndexPath!) -> CGFloat {
-        return 15
-    }
-    
-    override func collectionView(_ collectionView: JSQMessagesCollectionView!, avatarImageDataForItemAt indexPath: IndexPath!) -> JSQMessageAvatarImageDataSource! {
-        return nil
-    }
-    
-    override func collectionView(_ collectionView: JSQMessagesCollectionView!, messageBubbleImageDataForItemAt indexPath: IndexPath!) -> JSQMessageBubbleImageDataSource! {
-        let bubbleFactory = JSQMessagesBubbleImageFactory()
-        
-        let message = messages[indexPath.row]
-        
-        if currentUser.id == message.senderId {
-            return bubbleFactory?.outgoingMessagesBubbleImage(with: UIColor.jsq_messageBubbleBlue())
-        } else {
-            return bubbleFactory?.incomingMessagesBubbleImage(with: UIColor.jsq_messageBubbleLightGray())
+    @IBAction func loginDidTouch(_ sender: Any) {
+        if nameField?.text != "" { // 1
+            Auth.auth().signInAnonymously(completion: { (user, error) in // 2
+                if let err = error { // 3
+                    print(err.localizedDescription)
+                    return
+                }
+                
+                self.performSegue(withIdentifier: "LoginToChat", sender: nil) // 4
+            })
         }
     }
-
-    override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return messages.count
+   
+    
+    // MARK: - Notifications
+    
+    func keyboardWillShowNotification(_ notification: Notification) {
+        let keyboardEndFrame = ((notification as NSNotification).userInfo![UIKeyboardFrameEndUserInfoKey] as! NSValue).cgRectValue
+        let convertedKeyboardEndFrame = view.convert(keyboardEndFrame, from: view.window)
+        //bottomLayoutGuideConstraint.constant = view.bounds.maxY - convertedKeyboardEndFrame.minY
     }
     
-    override func collectionView(_ collectionView: JSQMessagesCollectionView!, messageDataForItemAt indexPath: IndexPath!) -> JSQMessageData! {
-        return messages[indexPath.row]
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        super.prepare(for: segue, sender: sender)
+        let navVc = segue.destination as! UINavigationController // 1
+        //let channelVc = navVc.viewControllers.first as! ChannelListViewController // 2
+        
+        //channelVc.senderDisplayName = nameField?.text // 3
     }
-}
-
-extension ViewController {
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
-        self.senderId = currentUser.id
-        self.senderDisplayName = currentUser.name
-        
-        
-        self.messages = getMessages()
-    }
-}
-
-extension ViewController {
-    func getMessages() -> [JSQMessage] {
-        var messages = [JSQMessage]()
-        
-        let message = JSQMessage(senderId: "2", displayName: "Name2", text: "Hi!")
-        
-        messages.append(message!)
-        
-        return messages
-    }
+    
 }
 

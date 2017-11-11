@@ -8,6 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		0A0A15F500EED37D93CA7D58 /* Pods_iOSProject.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6BD449CD0BBC8AE9C2356D9E /* Pods_iOSProject.framework */; };
+		2A80E7851FB75683005DEDDA /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2A80E7841FB75683005DEDDA /* GoogleService-Info.plist */; };
+		2A80E7871FB75A13005DEDDA /* ChannelListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A80E7861FB75A13005DEDDA /* ChannelListViewController.swift */; };
+		2A80E7891FB75A47005DEDDA /* Channel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A80E7881FB75A47005DEDDA /* Channel.swift */; };
+		2A80E78B1FB75A73005DEDDA /* CreateChannelCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A80E78A1FB75A73005DEDDA /* CreateChannelCell.swift */; };
 		2A993A791F97C35F00C195F4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A993A781F97C35F00C195F4 /* AppDelegate.swift */; };
 		2A993A7B1F97C35F00C195F4 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A993A7A1F97C35F00C195F4 /* ViewController.swift */; };
 		2A993A7E1F97C35F00C195F4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2A993A7C1F97C35F00C195F4 /* Main.storyboard */; };
@@ -16,7 +20,6 @@
 		2A993A8E1F97C35F00C195F4 /* iOSProjectTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A993A8D1F97C35F00C195F4 /* iOSProjectTests.swift */; };
 		2A993A991F97C35F00C195F4 /* iOSProjectUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A993A981F97C35F00C195F4 /* iOSProjectUITests.swift */; };
 		2AE018841F99F9F3009C1B53 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AE018831F99F9F3009C1B53 /* User.swift */; };
-		2AE018861F9E1829009C1B53 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2AE018851F9E1829009C1B53 /* GoogleService-Info.plist */; };
 		EA833FA0417C6505086301C1 /* Pods_iOSProjectUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8C52B3ADA46E9EB2F8EB0E2C /* Pods_iOSProjectUITests.framework */; };
 		EDFE3CA82AE647D90920BF70 /* Pods_iOSProjectTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7697CFFD7BEBA51D4163C27A /* Pods_iOSProjectTests.framework */; };
 /* End PBXBuildFile section */
@@ -40,6 +43,10 @@
 
 /* Begin PBXFileReference section */
 		2A36E56DB499EE6DDAEFB949 /* Pods-iOSProject.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOSProject.release.xcconfig"; path = "Pods/Target Support Files/Pods-iOSProject/Pods-iOSProject.release.xcconfig"; sourceTree = "<group>"; };
+		2A80E7841FB75683005DEDDA /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
+		2A80E7861FB75A13005DEDDA /* ChannelListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChannelListViewController.swift; sourceTree = "<group>"; };
+		2A80E7881FB75A47005DEDDA /* Channel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Channel.swift; sourceTree = "<group>"; };
+		2A80E78A1FB75A73005DEDDA /* CreateChannelCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateChannelCell.swift; sourceTree = "<group>"; };
 		2A993A751F97C35F00C195F4 /* iOSProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iOSProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2A993A781F97C35F00C195F4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2A993A7A1F97C35F00C195F4 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -54,7 +61,6 @@
 		2A993A981F97C35F00C195F4 /* iOSProjectUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iOSProjectUITests.swift; sourceTree = "<group>"; };
 		2A993A9A1F97C35F00C195F4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2AE018831F99F9F3009C1B53 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
-		2AE018851F9E1829009C1B53 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		3E757C91DACFD0E72FF35899 /* Pods-iOSProject.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOSProject.debug.xcconfig"; path = "Pods/Target Support Files/Pods-iOSProject/Pods-iOSProject.debug.xcconfig"; sourceTree = "<group>"; };
 		6BD449CD0BBC8AE9C2356D9E /* Pods_iOSProject.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iOSProject.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7697CFFD7BEBA51D4163C27A /* Pods_iOSProjectTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iOSProjectTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -136,9 +142,12 @@
 				2A993A7C1F97C35F00C195F4 /* Main.storyboard */,
 				2A993A7F1F97C35F00C195F4 /* Assets.xcassets */,
 				2A993A811F97C35F00C195F4 /* LaunchScreen.storyboard */,
+				2A80E7841FB75683005DEDDA /* GoogleService-Info.plist */,
 				2A993A841F97C35F00C195F4 /* Info.plist */,
 				2AE018831F99F9F3009C1B53 /* User.swift */,
-				2AE018851F9E1829009C1B53 /* GoogleService-Info.plist */,
+				2A80E78A1FB75A73005DEDDA /* CreateChannelCell.swift */,
+				2A80E7881FB75A47005DEDDA /* Channel.swift */,
+				2A80E7861FB75A13005DEDDA /* ChannelListViewController.swift */,
 			);
 			path = iOSProject;
 			sourceTree = "<group>";
@@ -288,7 +297,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2A993A831F97C35F00C195F4 /* LaunchScreen.storyboard in Resources */,
-				2AE018861F9E1829009C1B53 /* GoogleService-Info.plist in Resources */,
+				2A80E7851FB75683005DEDDA /* GoogleService-Info.plist in Resources */,
 				2A993A801F97C35F00C195F4 /* Assets.xcassets in Resources */,
 				2A993A7E1F97C35F00C195F4 /* Main.storyboard in Resources */,
 			);
@@ -336,6 +345,7 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-iOSProject/Pods-iOSProject-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
 				"${BUILT_PRODUCTS_DIR}/JSQMessagesViewController/JSQMessagesViewController.framework",
 				"${BUILT_PRODUCTS_DIR}/JSQSystemSoundPlayer/JSQSystemSoundPlayer.framework",
@@ -344,6 +354,7 @@
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/JSQMessagesViewController.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/JSQSystemSoundPlayer.framework",
@@ -474,8 +485,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				2A993A7B1F97C35F00C195F4 /* ViewController.swift in Sources */,
+				2A80E7891FB75A47005DEDDA /* Channel.swift in Sources */,
 				2A993A791F97C35F00C195F4 /* AppDelegate.swift in Sources */,
+				2A80E7871FB75A13005DEDDA /* ChannelListViewController.swift in Sources */,
 				2AE018841F99F9F3009C1B53 /* User.swift in Sources */,
+				2A80E78B1FB75A73005DEDDA /* CreateChannelCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
