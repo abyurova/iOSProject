@@ -12,6 +12,7 @@
 		2A80E7871FB75A13005DEDDA /* ChannelListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A80E7861FB75A13005DEDDA /* ChannelListViewController.swift */; };
 		2A80E7891FB75A47005DEDDA /* Channel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A80E7881FB75A47005DEDDA /* Channel.swift */; };
 		2A80E78B1FB75A73005DEDDA /* CreateChannelCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A80E78A1FB75A73005DEDDA /* CreateChannelCell.swift */; };
+		2A80E78D1FB87485005DEDDA /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A80E78C1FB87485005DEDDA /* ChatViewController.swift */; };
 		2A993A791F97C35F00C195F4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A993A781F97C35F00C195F4 /* AppDelegate.swift */; };
 		2A993A7B1F97C35F00C195F4 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A993A7A1F97C35F00C195F4 /* ViewController.swift */; };
 		2A993A7E1F97C35F00C195F4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2A993A7C1F97C35F00C195F4 /* Main.storyboard */; };
@@ -47,6 +48,7 @@
 		2A80E7861FB75A13005DEDDA /* ChannelListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChannelListViewController.swift; sourceTree = "<group>"; };
 		2A80E7881FB75A47005DEDDA /* Channel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Channel.swift; sourceTree = "<group>"; };
 		2A80E78A1FB75A73005DEDDA /* CreateChannelCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateChannelCell.swift; sourceTree = "<group>"; };
+		2A80E78C1FB87485005DEDDA /* ChatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
 		2A993A751F97C35F00C195F4 /* iOSProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iOSProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2A993A781F97C35F00C195F4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2A993A7A1F97C35F00C195F4 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -146,6 +148,7 @@
 				2A993A841F97C35F00C195F4 /* Info.plist */,
 				2AE018831F99F9F3009C1B53 /* User.swift */,
 				2A80E78A1FB75A73005DEDDA /* CreateChannelCell.swift */,
+				2A80E78C1FB87485005DEDDA /* ChatViewController.swift */,
 				2A80E7881FB75A47005DEDDA /* Channel.swift */,
 				2A80E7861FB75A13005DEDDA /* ChannelListViewController.swift */,
 			);
@@ -487,6 +490,7 @@
 				2A993A7B1F97C35F00C195F4 /* ViewController.swift in Sources */,
 				2A80E7891FB75A47005DEDDA /* Channel.swift in Sources */,
 				2A993A791F97C35F00C195F4 /* AppDelegate.swift in Sources */,
+				2A80E78D1FB87485005DEDDA /* ChatViewController.swift in Sources */,
 				2A80E7871FB75A13005DEDDA /* ChannelListViewController.swift in Sources */,
 				2AE018841F99F9F3009C1B53 /* User.swift in Sources */,
 				2A80E78B1FB75A73005DEDDA /* CreateChannelCell.swift in Sources */,

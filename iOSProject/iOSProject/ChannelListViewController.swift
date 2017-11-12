@@ -77,8 +77,10 @@ class ChannelListViewController: UITableViewController {
             channelRef.removeObserver(withHandle: refHandle)
         }
     }
-    @IBAction func createChannel(_ sender: AnyObject) {
-        if let name = newChannelTextField?.text { // 1
+    
+     @IBAction func createChannel(_ sender: Any) {
+     
+     if let name = newChannelTextField?.text { // 1
             let newChannelRef = channelRef.childByAutoId() // 2
             let channelItem = [ // 3
                 "name": name
