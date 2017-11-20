@@ -9,8 +9,7 @@ import UIKit
 import Foundation
 class CreateChannelCell: UITableViewCell {
     
-    @IBOutlet weak var createChannelButton: UIButton!
-    
+     @IBOutlet weak var createChannelButton: UIButton!
      @IBOutlet weak var newChannelNameField: UITextField!
     
     

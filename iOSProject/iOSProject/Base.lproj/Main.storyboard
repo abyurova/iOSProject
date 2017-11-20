@@ -31,7 +31,10 @@
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="prL-pT-huR">
                                 <rect key="frame" x="78" y="531" width="219" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Login"/>
+                                <color key="backgroundColor" red="0.62698193049713924" green="0.64119714291009022" blue="0.94048449654264499" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <state key="normal" title="Login">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
                                 <connections>
                                     <action selector="loginDidTouch:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ucf-dY-qJg"/>
                                 </connections>
@@ -84,7 +87,7 @@
                                 <connections>
                                     <outlet property="createChannelButton" destination="k9W-1G-deK" id="DFf-lR-SVr"/>
                                     <outlet property="newChannelNameField" destination="tU0-2a-lHh" id="jbY-qm-fq0"/>
-                                    <segue destination="fxH-e5-w1w" kind="show" id="4xC-0R-4nw"/>
+                                    <segue destination="fxH-e5-w1w" kind="show" identifier="ShowChannel" id="4xC-0R-4nw"/>
                                 </connections>
                             </tableViewCell>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="ExistingChannel" textLabel="6Wx-Ky-bax" style="IBUITableViewCellStyleDefault" id="uFU-To-1sv" userLabel="Existing Channel">
@@ -119,7 +122,7 @@
         <!--Chat View Controller-->
         <scene sceneID="0Pn-L1-K6q">
             <objects>
-                <viewController id="fxH-e5-w1w" customClass="ChatViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ShowChannel" id="fxH-e5-w1w" customClass="ChatViewController" customModule="iOSProject" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="tCC-mN-Ncb"/>
                         <viewControllerLayoutGuide type="bottom" id="Bjw-Wn-PbN"/>
@@ -141,6 +144,8 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="QCC-Hj-7wT">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" red="0.62698193049999995" green="0.64119714289999996" blue="0.94048449649999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <color key="barTintColor" red="0.66140597759999997" green="0.69121378219999996" blue="0.94048449649999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                     </navigationBar>
                     <connections>
                         <segue destination="CUI-0p-340" kind="relationship" relationship="rootViewController" id="Y6e-X2-tWi"/>
