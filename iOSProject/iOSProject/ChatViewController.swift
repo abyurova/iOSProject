@@ -80,8 +80,8 @@ class ChatViewController: JSQMessagesViewController {
         observeMessages()
     }
     override func didPressSend(_ button: UIButton!, withMessageText text: String!, senderId: String!, senderDisplayName: String!, date: Date!) {
-        let itemRef = messageRef.childByAutoId() // 1
-        let messageItem = [ // 2
+        let itemRef = messageRef.childByAutoId()
+        let messageItem = [
             "senderId": senderId!,
             "senderName": senderDisplayName!,
             "text": text!,
