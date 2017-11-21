@@ -52,8 +52,6 @@ class ChannelListViewController: UITableViewController {
     private lazy var channelRef: DatabaseReference = Database.database().reference().child("channels")
     private var channelRefHandle: DatabaseHandle?
     private func observeChannels() {
-        // Use the observe method to listen for new
-        // channels being written to the Firebase DB
         channelRefHandle = channelRef.observe(.childAdded, with: { (snapshot) -> Void in
             let channelData = snapshot.value as! Dictionary<String, AnyObject>
             let id = snapshot.key
@@ -79,34 +77,28 @@ class ChannelListViewController: UITableViewController {
     
      @IBAction func createChannel(_ sender: Any) {
      
-     if let name = newChannelTextField?.text { // 1
-            let newChannelRef = channelRef.childByAutoId() // 2
-            let channelItem = [ // 3
+     if let name = newChannelTextField?.text {
+            let newChannelRef = channelRef.childByAutoId()
+            let channelItem = [
                 "name": name
             ]
-            newChannelRef.setValue(channelItem) // 4
+            newChannelRef.setValue(channelItem) 
         }
     }
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if indexPath.section == Section.currentChannelsSection.rawValue {
             let channel = channels[(indexPath as NSIndexPath).row]
-            let vc = self.storyboard?.instantiateViewController(withIdentifier: "ShowChannel") as! ChatViewController
-            //vc.delegate = self
-            vc.channel = channel
-            self.navigationController?.pushViewController(vc, animated: true)
-            //self.performSegue(withIdentifier: "ShowChannel", sender: channel)
+           
+            let chatVC = self.storyboard?.instantiateViewController(withIdentifier: "ShowChannel")
+            self.navigationController?.pushViewController(chatVC!, animated: true)
+            let chatvc = chatVC as! ChatViewController
+            chatvc.senderDisplayName = senderDisplayName
+            chatvc.channel = channel
+            chatvc.channelRef = channelRef.child(channel.id)
         }
     }
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        super.prepare(for: segue, sender: sender)
-        
-        if let channel = sender as? Channel {
-            let chatVc = segue.destination as! ChatViewController
-            chatVc.senderDisplayName = senderDisplayName
-            //chatVc.channel = channel
-            //chatVc.channelRef = channelRef.child(channel.id)
-        }
-    }
+  
+  
     
 }
 
