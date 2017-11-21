@@ -42,7 +42,7 @@ class ChatViewController: JSQMessagesViewController {
         let message = messages[indexPath.item] 
         if message.senderId == senderId {
             return outgoingBubbleImageView
-        } else { // 3
+        } else {
             return incomingBubbleImageView
         }
     }
@@ -57,14 +57,10 @@ class ChatViewController: JSQMessagesViewController {
     }
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        
         addMessage(withId: "foo", name: "jhh", text: "nj,")
-        
         addMessage(withId: senderId, name: "Me", text: "In n n")
         addMessage(withId: senderId, name: "Me", text: "njk!")
-        
         finishReceivingMessage()
-        
     }
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = super.collectionView(collectionView, cellForItemAt: indexPath) as! JSQMessagesCollectionViewCell
