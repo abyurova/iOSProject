@@ -9,7 +9,7 @@ class ViewController: UIViewController {
     
 
     @IBOutlet weak var nameField: UITextField!
-    @IBOutlet weak var bottomLayoutGuideConstraint: NSLayoutConstraint!
+   // @IBOutlet weak var bottomLayoutGuideConstraint: NSLayoutConstraint!
     // MARK: View Lifecycle
     
     override func viewWillAppear(_ animated: Bool) {
@@ -30,22 +30,14 @@ class ViewController: UIViewController {
                 self.performSegue(withIdentifier: "LoginToChat", sender: nil) 
             })
         }
+        else{
+            print("no name")
+        }
     }
-   
-    
-    // MARK: - Notifications
-    
-    func keyboardWillShowNotification(_ notification: Notification) {
-        let keyboardEndFrame = ((notification as NSNotification).userInfo![UIKeyboardFrameEndUserInfoKey] as! NSValue).cgRectValue
-        let convertedKeyboardEndFrame = view.convert(keyboardEndFrame, from: view.window)
-        //bottomLayoutGuideConstraint.constant = view.bounds.maxY - convertedKeyboardEndFrame.minY
-    }
-    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         super.prepare(for: segue, sender: sender)
-        let channelVc = segue.destination as! ChannelListViewController // 2
-        
-        channelVc.senderDisplayName = nameField?.text // 3
+        let channelVc = segue.destination as! ChannelListViewController 
+        channelVc.senderDisplayName = nameField?.text
     }
     
 }

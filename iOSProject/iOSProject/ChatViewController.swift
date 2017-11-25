@@ -60,6 +60,8 @@ class ChatViewController: JSQMessagesViewController {
         addMessage(withId: "foo", name: "jhh", text: "nj,")
         addMessage(withId: senderId, name: "Me", text: "In n n")
         addMessage(withId: senderId, name: "Me", text: "njk!")
+        collectionView!.collectionViewLayout.incomingAvatarViewSize = CGSize.zero
+        collectionView!.collectionViewLayout.outgoingAvatarViewSize = CGSize.zero
         finishReceivingMessage()
     }
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {

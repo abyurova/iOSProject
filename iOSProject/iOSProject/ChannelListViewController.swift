@@ -10,7 +10,7 @@ import UIKit
 import Firebase
 
 enum Section: Int {
-    case createNewChannelSection = 0
+    case createNewChannelSection
     case currentChannelsSection
 }
 class ChannelListViewController: UITableViewController {
