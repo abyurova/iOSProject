@@ -9,6 +9,7 @@ target 'iOSProject' do
   pod 'Firebase/Database'
   pod 'Firebase/Auth'
   pod 'Firebase/Storage'
+  pod 'NVActivityIndicatorView'
   # Pods for iOSProject
 
   target 'iOSProjectTests' do

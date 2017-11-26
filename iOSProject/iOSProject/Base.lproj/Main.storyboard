@@ -60,6 +60,10 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <activityIndicatorView key="tableFooterView" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="gray" id="zCx-hU-BbW">
+                            <rect key="frame" x="0.0" y="143" width="375" height="20"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        </activityIndicatorView>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="NewChannel" selectionStyle="default" indentationWidth="10" reuseIdentifier="NewChannel" rowHeight="71" id="UwK-RO-TE9" userLabel="New Channel" customClass="CreateChannelCell" customModule="iOSProject" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="375" height="71"/>
@@ -115,6 +119,7 @@
                     </tableView>
                     <navigationItem key="navigationItem" title="Channel List View Controller" id="mNn-Kz-pu4"/>
                     <connections>
+                        <outlet property="indicator" destination="zCx-hU-BbW" id="E8w-EY-jyt"/>
                         <segue destination="fxH-e5-w1w" kind="show" identifier="toChat" id="GIS-QD-EDb"/>
                     </connections>
                 </tableViewController>

@@ -1,19 +1,21 @@
-//
+
 //  ChannelListViewController.swift
 //  iOSProject
 //
 //  Created by Ainur on 11/11/17.
 //  Copyright © 2017 Ainur. All rights reserved.
-//
 
 import UIKit
 import Firebase
-
+import NVActivityIndicatorView
 enum Section: Int {
     case createNewChannelSection
     case currentChannelsSection
 }
 class ChannelListViewController: UITableViewController {
+    
+    @IBOutlet var indicator: UIActivityIndicatorView!
+    
     var senderDisplayName: String?
     var newChannelTextField: UITextField?
     private var channels: [Channel] = []
@@ -51,7 +53,12 @@ class ChannelListViewController: UITableViewController {
     }
     private lazy var channelRef: DatabaseReference = Database.database().reference().child("channels")
     private var channelRefHandle: DatabaseHandle?
+    
     private func observeChannels() {
+        //let activityIndicator = NVActivityIndicatorView(frame: CGRect(x: self.view.frame.width/2, y: self.view.frame.height/2,width: 60, height: 60), type: .ballClipRotate , color: UIColor.red, padding: 0)
+        indicator.startAnimating()
+        //activityIndicator.startAnimating()
+        //view.addSubview(activityIndicator)
         channelRefHandle = channelRef.observe(.childAdded, with: { (snapshot) -> Void in
             let channelData = snapshot.value as! Dictionary<String, AnyObject>
             let id = snapshot.key
@@ -61,6 +68,7 @@ class ChannelListViewController: UITableViewController {
             } else {
                 print("Error! Could not decode channel data")
             }
+            self.indicator.stopAnimating()
         })
     }
     override func viewDidLoad() {

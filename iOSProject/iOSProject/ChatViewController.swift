@@ -79,6 +79,7 @@ class ChatViewController: JSQMessagesViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.senderId = Auth.auth().currentUser?.uid
+        self.inputToolbar.contentView.leftBarButtonItem = nil;
         observeMessages()
     }
     override func didPressSend(_ button: UIButton!, withMessageText text: String!, senderId: String!, senderDisplayName: String!, date: Date!) {
